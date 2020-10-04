@@ -149,6 +149,7 @@ def draw(win,bird,pipes):
 	win.blit(fon,(0,0))
 	for bird in birds:
 		bird.draw(win)
+		bird.move()
 	# pipe.draw(win)
 	base.draw(win)
 	for pipe in pipes:
@@ -192,8 +193,8 @@ def main():
 		
 		for z in birds:
 			for nero in nn:
-				z.move()
-			
+				# z.move()
+
 
 				nero.setup(z,pipes[-1])
 				
@@ -216,6 +217,7 @@ def main():
 			# if birds==[]:
 			# 	pass
 		if birds[u].live==False:
+			print("y")
 			birds.pop(u) 
 			nn.pop(	u)
 			u+=1
